@@ -1,0 +1,15 @@
+[Unit]
+Description=Smart Restroom Management System
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+WorkingDirectory=/path/to/test_esp32
+Environment="PATH=/path/to/test_esp32/.venv/bin"
+ExecStart=/path/to/test_esp32/.venv/bin/gunicorn --worker-class eventlet -w 1 --bind 0.0.0.0:5000 wsgi:app
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
