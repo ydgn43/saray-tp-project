@@ -50,7 +50,9 @@ function renderRooms() {
                         <div class="room-meta">${room.type} • ${room.location || 'No location'}</div>
                     </div>
                     <div class="room-actions">
-                        <button class="btn-icon" onclick="editRoom('${room.id}')" title="Edit Room">⚙️</button>
+                        <button class="btn-icon" onclick="editRoom('${room.id}')" title="Edit Room">
+                            <span class="material-symbols-outlined">settings</span>
+                        </button>
                     </div>
                 </div>
                 
@@ -58,12 +60,16 @@ function renderRooms() {
                     ${Object.entries(supplies).map(([key, supply]) => `
                         <div class="supply-item">
                             <span class="supply-name">
+                                <span class="material-symbols-outlined">${getSupplyIcon(key)}</span>
                                 <span>${supply.name}</span>
                             </span>
                             <div class="supply-actions">
                                 <span class="supply-status status-${supply.status}">${supply.status.toUpperCase()}</span>
                                 ${supply.status === 'empty' ?
-                `<button class="btn-resolve" onclick="resolveSupply('${room.id}', '${key}')">Mark Full</button>`
+                `<button class="btn-resolve" onclick="resolveSupply('${room.id}', '${key}')">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Mark Full
+                </button>`
                 : ''}
                             </div>
                         </div>
@@ -96,8 +102,13 @@ function getDefaultSupplies() {
 
 // Get icon for supply type
 function getSupplyIcon(type) {
-    // Minimal design - no icons
-    return '';
+    const icons = {
+        toilet_paper: 'laps',
+        soap: 'soap',
+        towel: 'dry',
+        trash: 'delete'
+    };
+    return icons[type] || 'inventory_2';
 }
 
 // Modal functions

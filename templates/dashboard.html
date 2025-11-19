@@ -5,13 +5,18 @@
     <title>Smart Restroom Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.min.js"></script>
 </head>
 
 <body>
     <div class="header">
         <h1>Smart Restroom Management System</h1>
-        <button class="btn-primary" onclick="showAddRoomModal()">+ Add New Room</button>
+        <button class="btn-primary" onclick="showAddRoomModal()">
+            <span class="material-symbols-outlined">add</span>
+            Add New Room
+        </button>
     </div>
 
     <div class="container">
@@ -23,7 +28,9 @@
     <!-- Add Room Modal -->
     <div id="addRoomModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeAddRoomModal()">&times;</span>
+            <span class="close" onclick="closeAddRoomModal()">
+                <span class="material-symbols-outlined">close</span>
+            </span>
             <h2>Add New Room</h2>
             <form id="addRoomForm">
                 <div class="form-group">
@@ -51,7 +58,9 @@
     <!-- Edit Room Modal -->
     <div id="editRoomModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeEditRoomModal()">&times;</span>
+            <span class="close" onclick="closeEditRoomModal()">
+                <span class="material-symbols-outlined">close</span>
+            </span>
             <h2>Edit Room</h2>
             <form id="editRoomForm">
                 <input type="hidden" id="editRoomId">
