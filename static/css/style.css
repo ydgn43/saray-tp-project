@@ -11,6 +11,16 @@ body {
     padding: 20px;
 }
 
+/* Material Symbols styling */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    vertical-align: middle;
+}
+
 .header {
     text-align: center;
     color: #000000;
@@ -148,6 +158,11 @@ body {
     color: #000000;
 }
 
+.supply-name .material-symbols-outlined {
+    font-size: 20px;
+    color: #666666;
+}
+
 .supply-actions {
     display: flex;
     gap: 8px;
@@ -191,6 +206,13 @@ body {
     transition: background 0.2s;
     font-weight: 600;
     text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-resolve .material-symbols-outlined {
+    font-size: 16px;
 }
 
 .btn-resolve:hover {
@@ -213,6 +235,9 @@ body {
     cursor: pointer;
     transition: background 0.3s;
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-primary:hover {
@@ -289,6 +314,13 @@ body {
     font-weight: bold;
     cursor: pointer;
     line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close .material-symbols-outlined {
+    font-size: 28px;
 }
 
 .close:hover {
