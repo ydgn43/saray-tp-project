@@ -1,10 +1,6 @@
 print(">>> SMART RESTROOM MANAGEMENT SYSTEM <<<")
-
-# -------------------------
-# Imports
-# -------------------------
 import eventlet
-eventlet.monkey_patch()  # REQUIRED for Cloudflare + WebSockets
+eventlet.monkey_patch()
 
 from flask import Flask, request, jsonify, render_template
 from datetime import datetime
@@ -28,7 +24,7 @@ socketio = SocketIO(
     async_mode="eventlet",
     ping_interval=25,
     ping_timeout=60,
-    cookie=None)  # Cloudflare only supports clean WS, no cookies
+    cookie=None)
 
 
 
